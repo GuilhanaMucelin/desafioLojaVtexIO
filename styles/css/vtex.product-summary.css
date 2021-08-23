@@ -26,11 +26,20 @@
 .brandName {
   font-weight: 600;
   font-size: 18px;
-  color: #2E2E2E;
+  color: #fff;
+}
+
+.nameWrapper {
+  padding: 10px 20px;
+}
+
+.imageNormal {
+  margin-bottom: 20px;
 }
 
 .container {
   text-align: start;
+  width: 350px;
 }
 
 .imageContainer {
@@ -40,3 +49,8 @@
 .image {
   border-radius: 0.25rem;
 }
+.element {
+  background: #424242
+}
+
+

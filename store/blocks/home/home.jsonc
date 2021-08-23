@@ -1,31 +1,24 @@
 {
   "store.home": {
     "blocks": [
-      "list-context.image-list#demo",
-      /* You can make references to blocks defined in other files.
-       * For example, `flex-layout.row#deals` is defined in the `deals.json` file. */
-      "__fold__.experimentalLazyAssets",
-      "flex-layout.row#deals",
-      "rich-text#shelf-title",
-      "flex-layout.row#shelf",
-      "info-card#home",
-      "rich-text#question",
-      "rich-text#link",
-      "newsletter"
+      "tab-layout#menu"
     ]
   },
-
   "list-context.image-list#demo": {
-    "children": ["slider-layout#demo-images"],
+    "children": [
+      "slider-layout#demo-images"
+    ],
     "props": {
-      "height": 720,
+      "height": 319,
       "images": [
         {
-          "image": "https://storecomponents.vteximg.com.br/arquivos/banner-principal.png",
+          "width": "912px",
+          "image": "assets/banner-1.png",
           "mobileImage": "https://storecomponents.vteximg.com.br/arquivos/banner-principal-mobile.jpg"
         },
         {
-          "image": "https://storecomponents.vteximg.com.br/arquivos/banner.jpg",
+          "width": "912px",
+          "image": "assets/banner-2.png",
           "mobileImage": "https://storecomponents.vteximg.com.br/arquivos/banner-principal-mobile.jpg"
         }
       ]
@@ -33,71 +26,506 @@
   },
   "slider-layout#demo-images": {
     "props": {
+      "showNavigationArrows": "desktopOnly",
       "itemsPerPage": {
         "desktop": 1,
         "tablet": 1,
         "phone": 1
       },
       "infinite": true,
-      "showNavigationArrows": "desktopOnly",
       "blockClass": "carousel"
     }
   },
-
-  "rich-text#shelf-title": {
+  "slider-layout#tabs": {
     "props": {
-      "text": "## Summer",
-      "blockClass": "shelfTitle"
-    }
-  },
-  "flex-layout.row#shelf": {
-    "children": ["list-context.product-list#demo1"]
-  },
-  "list-context.product-list#demo1": {
-    "blocks": ["product-summary.shelf"],
-    "children": ["slider-layout#demo-products"],
-    "props": {
-      "orderBy": "OrderByTopSaleDESC"
-    }
-  },
-  "slider-layout#demo-products": {
-    "props": {
+      "showNavigationArrows": "desktopOnly",
+      "showPaginationDots": "never",
       "itemsPerPage": {
-        "desktop": 5,
-        "tablet": 3,
-        "phone": 1
+        "desktop": 8,
+        "tablet": 6,
+        "phone": 3
       },
-      "infinite": true,
-      "fullWidth": false,
-      "blockClass": "shelf"
+      "infinite": false,
+      "blockClass": "tabs-slider"
+    },
+    "children": [
+      "tab-list.item#promocao",
+      "tab-list.item#corinthians",
+      "tab-list.item#palmeiras",
+      "tab-list.item#signos",
+      "tab-list.item#divertidos",
+      "tab-list.item#7-maravilhas",
+      "tab-list.item#guerreiros",
+      "tab-list.item#album-1",
+      "tab-list.item#album-2",
+      "tab-list.item#album-3"
+    ]
+  },
+  "tab-layout#menu": {
+    "children": [
+      "tab-list#home",
+      "tab-content#home"
+    ],
+    "props": {
+      "blockClass": "home",
+      "defaultActiveTabId": "promocao"
     }
   },
-
-  "info-card#home": {
+  "tab-list#home": {
+    "children": [
+      "slider-layout#tabs"
+    ]
+  },
+  "tab-list.item#promocao": {
     "props": {
-      "id": "info-card-home",
-      "isFullModeStyle": false,
-      "textPosition": "left",
-      "imageUrl": "https://storecomponents.vteximg.com.br/arquivos/banner-infocard2.png",
-      "headline": "Clearance Sale",
-      "callToActionText": "DISCOVER",
-      "callToActionUrl": "/sale/d",
-      "blockClass": "info-card-home",
-      "textAlignment": "center"
+      "tabId": "promocao",
+      "label": "Promoção",
+      "defaultActiveTab": true
     }
   },
-
-  "rich-text#question": {
+  "tab-list.item#corinthians": {
     "props": {
-      "text": "**This is an example store built using the VTEX platform.\nWant to know more?**",
-      "blockClass": "question"
+      "tabId": "corinthians",
+      "label": "Corinthians"
     }
   },
-
-  "rich-text#link": {
+  "tab-list.item#palmeiras": {
     "props": {
-      "text": "\n**Reach us at**\nwww.vtex.com.br",
-      "blockClass": "link"
+      "tabId": "palmeiras",
+      "label": "Palmeiras"
     }
+  },
+  "tab-list.item#signos": {
+    "props": {
+      "tabId": "signos",
+      "label": "Signos"
+    }
+  },
+  "tab-list.item#divertidos": {
+    "props": {
+      "tabId": "divertidos",
+      "label": "Divertidos"
+    }
+  },
+  "tab-list.item#7-maravilhas": {
+    "props": {
+      "tabId": "7-maravilhas",
+      "label": "7 Maravilhas"
+    }
+  },
+  "tab-list.item#guerreiros": {
+    "props": {
+      "tabId": "guerreiros",
+      "label": "Guerreiros"
+    }
+  },
+  "tab-list.item#album-1": {
+    "props": {
+      "tabId": "album-1",
+      "label": "Álbum 1"
+    }
+  },
+  "tab-list.item#album-2": {
+    "props": {
+      "tabId": "album-2",
+      "label": "Álbum 2"
+    }
+  },
+  "tab-list.item#album-3": {
+    "props": {
+      "tabId": "album-3",
+      "label": "Álbum 3"
+    }
+  },
+  "tab-content#home": {
+    "children": [
+      "tab-content.item#promocao",
+      "tab-content.item#corinthians",
+      "tab-content.item#palmeiras",
+      "tab-content.item#signos",
+      "tab-content.item#divertidos",
+      "tab-content.item#7-maravilhas",
+      "tab-content.item#guerreiros",
+      "tab-content.item#album-1",
+      "tab-content.item#album-2",
+      "tab-content.item#album-3"
+    ]
+  },
+  "tab-content.item#promocao": {
+    "children": [
+      "list-context.image-list#demo",
+      "search-result-layout.customQuery#promocao"
+    ],
+    "props": {
+      "tabId": "promocao"
+    }
+  },
+  "tab-content.item#corinthians": {
+    "children": [
+      "list-context.image-list#demo",
+      "search-result-layout.customQuery#corinthians"
+    ],
+    "props": {
+      "tabId": "corinthians"
+    }
+  },
+  "tab-content.item#palmeiras": {
+    "children": [
+      "list-context.image-list#demo",
+      "search-result-layout.customQuery#palmeiras"
+    ],
+    "props": {
+      "tabId": "palmeiras"
+    }
+  },
+  "tab-content.item#signos": {
+    "children": [
+      "list-context.image-list#demo",
+      "search-result-layout.customQuery#signos"
+    ],
+    "props": {
+      "tabId": "signos"
+    }
+  },
+  "tab-content.item#divertidos": {
+    "children": [
+      "list-context.image-list#demo",
+      "search-result-layout.customQuery#divertidos"
+    ],
+    "props": {
+      "tabId": "divertidos"
+    }
+  },
+  "tab-content.item#7-maravilhas": {
+    "children": [
+      "list-context.image-list#demo",
+      "search-result-layout.customQuery#7-maravilhas"
+    ],
+    "props": {
+      "tabId": "7-maravilhas"
+    }
+  },
+  "tab-content.item#guerreiros": {
+    "children": [
+      "list-context.image-list#demo",
+      "search-result-layout.customQuery#guerreiros"
+    ],
+    "props": {
+      "tabId": "guerreiros"
+    }
+  },
+  "tab-content.item#album-1": {
+    "children": [
+      "list-context.image-list#demo",
+      "search-result-layout.customQuery#album-1"
+    ],
+    "props": {
+      "tabId": "album-1"
+    }
+  },
+  "tab-content.item#album-2": {
+    "children": [
+      "list-context.image-list#demo",
+      "search-result-layout.customQuery#album-2"
+    ],
+    "props": {
+      "tabId": "album-2"
+    }
+  },
+  "tab-content.item#album-3": {
+    "children": [
+      "list-context.image-list#demo",
+      "search-result-layout.customQuery#album-3"
+    ],
+    "props": {
+      "tabId": "album-3"
+    }
+  },
+  "search-result-layout.customQuery#promocao": {
+    "props": {
+      "querySchema": {
+        "maxItemsPerPage": 8,
+        "mapField": "productClusterIds",
+        "orderByField": "OrderByReleaseDateDESC",
+        "query": "153",
+        "hideUnavailableItems": true,
+        "facetsBehavior": "static",
+        "skuFilter": "ALL",
+        "__unstableProductOriginalVtex": true
+      }
+    },
+    "blocks": [
+      "search-result-layout.desktop#promocao",
+      "search-result-layout.mobile#promocao"
+    ]
+  },
+  "search-result-layout.desktop#promocao": {
+    "children": [
+      "flex-layout.row#result"
+    ],
+    "props": {
+      "preventRouteChange": true
+    }
+  },
+  "search-result-layout.mobile#promocao": {
+    "children": [
+      "flex-layout.row#result"
+    ],
+    "props": {
+      "preventRouteChange": true
+    }
+  },
+  "search-result-layout.customQuery#corinthians": {
+    "props": {
+      "querySchema": {
+        "query": "154",
+        "mapField": "productClusterIds",
+        "orderByField": "OrderByReleaseDateDESC",
+        "hideUnavailableItems": true,
+        "facetsBehavior": "static",
+        "skuFilter": "ALL",
+        "__unstableProductOriginalVtex": true
+      }
+    },
+    "blocks": [
+      "search-result-layout.desktop#corinthians",
+      "search-result-layout.mobile#corinthians"
+    ]
+  },
+  "search-result-layout.desktop#corinthians": {
+    "children": [
+      "flex-layout.row#searchbread",
+      "flex-layout.row#searchtitle",
+      "flex-layout.row#result"
+    ]
+  },
+  "search-result-layout.mobile#corinthians": {
+    "children": [
+      "flex-layout.row#searchbread",
+      "flex-layout.row#searchtitle",
+      "flex-layout.row#result"
+    ]
+  },
+  "search-result-layout.customQuery#palmeiras": {
+    "props": {
+      "querySchema": {
+        "simulationBehavior": "skip",
+        "mapField": "productClusterIds",
+        "query": "155",
+        "orderByField": "OrderByReleaseDateDESC",
+        "hideUnavailableItems": true,
+        "facetsBehavior": "static",
+        "skuFilter": "ALL",
+        "__unstableProductOriginalVtex": true
+      }
+    },
+    "blocks": [
+      "search-result-layout.desktop#palmeiras",
+      "search-result-layout.mobile#palmeiras"
+    ]
+  },
+  "search-result-layout.desktop#palmeiras": {
+    "children": [
+      "flex-layout.row#searchbread",
+      "flex-layout.row#searchtitle",
+      "flex-layout.row#result"
+    ]
+  },
+  "search-result-layout.mobile#palmeiras": {
+    "children": [
+      "flex-layout.row#searchbread",
+      "flex-layout.row#searchtitle",
+      "flex-layout.row#result"
+    ]
+  },
+  "search-result-layout.customQuery#signos": {
+    "props": {
+      "querySchema": {
+        "simulationBehavior": "skip",
+        "mapField": "productClusterIds",
+        "query": "156",
+        "maxItemsPerPage": 8,
+        "orderByField": "OrderByReleaseDateDESC",
+        "hideUnavailableItems": true,
+        "facetsBehavior": "static",
+        "skuFilter": "ALL",
+        "__unstableProductOriginalVtex": true
+      }
+    },
+    "blocks": [
+      "search-result-layout.desktop#signos",
+      "search-result-layout.mobile#signos"
+    ]
+  },
+  "search-result-layout.desktop#signos": {
+    "children": [
+      "flex-layout.row#searchbread",
+      "flex-layout.row#searchtitle",
+      "flex-layout.row#result"
+    ]
+  },
+  "search-result-layout.mobile#signos": {
+    "children": [
+      "flex-layout.row#searchbread",
+      "flex-layout.row#searchtitle",
+      "flex-layout.row#result"
+    ]
+  },
+  "search-result-layout.customQuery#divertidos": {
+    "props": {
+      "querySchema": {
+        "simulationBehavior": "skip",
+        "mapField": "productClusterIds",
+        "maxItemsPerPage": 8,
+        "orderByField": "OrderByReleaseDateDESC",
+        "hideUnavailableItems": true,
+        "facetsBehavior": "static",
+        "skuFilter": "ALL",
+        "__unstableProductOriginalVtex": true
+      }
+    },
+    "blocks": [
+      "search-result-layout.desktop#divertidos",
+      "search-result-layout.mobile#divertidos"
+    ]
+  },
+  "search-result-layout.desktop#divertidos": {
+    "children": [
+      "flex-layout.row#searchbread",
+      "flex-layout.row#searchtitle",
+      "flex-layout.row#result"
+    ]
+  },
+  "search-result-layout.mobile#divertidos": {
+    "children": [
+      "flex-layout.row#searchbread",
+      "flex-layout.row#searchtitle",
+      "flex-layout.row#result"
+    ]
+  },
+  "search-result-layout.customQuery#7-maravilhas": {
+    "props": {
+      "querySchema": {
+        "simulationBehavior": "skip"
+      }
+    },
+    "blocks": [
+      "search-result-layout.desktop#7-maravilhas",
+      "search-result-layout.mobile#7-maravilhas"
+    ]
+  },
+  "search-result-layout.desktop#7-maravilhas": {
+    "children": [
+      "flex-layout.row#searchbread",
+      "flex-layout.row#searchtitle",
+      "flex-layout.row#result"
+    ]
+  },
+  "search-result-layout.mobile#7-maravilhas": {
+    "children": [
+      "flex-layout.row#searchbread",
+      "flex-layout.row#searchtitle",
+      "flex-layout.row#result"
+    ]
+  },
+  "search-result-layout.customQuery#guerreiros": {
+    "props": {
+      "querySchema": {
+        "simulationBehavior": "skip"
+      }
+    },
+    "blocks": [
+      "search-result-layout.desktop#guerreiros",
+      "search-result-layout.mobile#guerreiros"
+    ]
+  },
+  "search-result-layout.desktop#guerreiros": {
+    "children": [
+      "flex-layout.row#searchbread",
+      "flex-layout.row#searchtitle",
+      "flex-layout.row#result"
+    ]
+  },
+  "search-result-layout.mobile#guerreiros": {
+    "children": [
+      "flex-layout.row#searchbread",
+      "flex-layout.row#searchtitle",
+      "flex-layout.row#result"
+    ]
+  },
+  "search-result-layout.customQuery#album-1": {
+    "props": {
+      "querySchema": {
+        "simulationBehavior": "skip"
+      }
+    },
+    "blocks": [
+      "search-result-layout.desktop#album-1",
+      "search-result-layout.mobile#album-1"
+    ]
+  },
+  "search-result-layout.desktop#album-1": {
+    "children": [
+      "flex-layout.row#searchbread",
+      "flex-layout.row#searchtitle",
+      "flex-layout.row#result"
+    ]
+  },
+  "search-result-layout.mobile#album-1": {
+    "children": [
+      "flex-layout.row#searchbread",
+      "flex-layout.row#searchtitle",
+      "flex-layout.row#result"
+    ]
+  },
+  "search-result-layout.customQuery#album-2": {
+    "props": {
+      "querySchema": {
+        "simulationBehavior": "skip"
+      }
+    },
+    "blocks": [
+      "search-result-layout.desktop#album-2",
+      "search-result-layout.mobile#album-2"
+    ]
+  },
+  "search-result-layout.desktop#album-2": {
+    "children": [
+      "flex-layout.row#searchbread",
+      "flex-layout.row#searchtitle",
+      "flex-layout.row#result"
+    ]
+  },
+  "search-result-layout.mobile#album-2": {
+    "children": [
+      "flex-layout.row#searchbread",
+      "flex-layout.row#searchtitle",
+      "flex-layout.row#result"
+    ]
+  },
+  "search-result-layout.customQuery#album-3": {
+    "props": {
+      "querySchema": {
+        "simulationBehavior": "skip"
+      }
+    },
+    "blocks": [
+      "search-result-layout.desktop#album-3",
+      "search-result-layout.mobile#album-3"
+    ]
+  },
+  "search-result-layout.desktop#album-3": {
+    "children": [
+      "flex-layout.row#searchbread",
+      "flex-layout.row#searchtitle",
+      "flex-layout.row#result"
+    ]
+  },
+  "search-result-layout.mobile#album-3": {
+    "children": [
+      "flex-layout.row#searchbread",
+      "flex-layout.row#searchtitle",
+      "flex-layout.row#result"
+    ]
   }
 }

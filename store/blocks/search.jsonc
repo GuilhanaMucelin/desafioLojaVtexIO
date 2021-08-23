@@ -3,6 +3,7 @@
     "blocks": ["search-result-layout"],
     "props": {
       "context": {
+        "maxItemsPerPage": 8,
         "skusFilter": "ALL",
         "simulationBehavior": "skip"
       }
@@ -15,7 +16,7 @@
       "context": {
         "orderByField": "OrderByReleaseDateDESC",
         "hideUnavailableItems": true,
-        "maxItemsPerPage": 10,
+        "maxItemsPerPage": 8,
         "skusFilter": "ALL",
         "simulationBehavior": "skip"
       }
@@ -83,7 +84,7 @@
     "children": ["search-title.v2"]
   },
   "flex-layout.row#result": {
-    "children": ["flex-layout.col#filter", "flex-layout.col#content"],
+    "children": ["flex-layout.col#content"],
     "props": {
       "preventHorizontalStretch": true,
       "fullWidth": true
@@ -97,10 +98,7 @@
   },
   "flex-layout.col#content": {
     "children": [
-      "flex-layout.row#searchinfo",
-      "flex-layout.row#fetchprevious",
-      "flex-layout.row#products",
-      "flex-layout.row#fetchmore"
+      "flex-layout.row#products"
     ],
     "props": {
       "width": "grow",
@@ -242,10 +240,10 @@
           "name": "grid",
           "component": "GridSummary",
           "itemsPerRow": {
-            "(min-width:1300px)": 4,
-            "desktop": 3,
-            "tablet": 3,
-            "phone": 2
+            "(min-width:1300px)": 2,
+            "desktop": 2,
+            "tablet": 2,
+            "phone": 1
           }
         },
         {

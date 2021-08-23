@@ -1,0 +1,22 @@
+.minicartTitle {
+    color: #59ff00;    
+}
+
+.overlay--visible {
+    background: #59ff01;
+}
+
+.opened :global(.vtex-product-list-0-x-productName) {
+    color: white;    
+}
+
+.opened :global(.vtex-product-list-0-x-price) {
+    color: #59ff00;    
+}
+
+.opened :global(.vtex-styleguide-9-x-container),
+.opened :global(.vtex-dropdown__arrow),
+.opened :global(.vtex-dropdown__caption) {
+    border-color: #59ff00;   
+    color: #59ff00; 
+}

@@ -25,3 +25,27 @@
   padding-left: .5rem;
   padding-right: .5rem;
 }
+
+.sliderLayoutContainer--tabs-slider {
+  background: #212121;
+}
+
+.sliderArrows--tabs-slider {
+  color: white;
+}
+
+.sliderLayoutContainer--carousel {
+  background: #303030;
+  padding: 10px 0 20px;
+  margin-bottom: 30px;
+}
+
+.paginationDotsContainer--carousel {
+  bottom: -18px;
+}
+
+.sliderArrows--carousel {
+  padding: 0 270px;
+  bottom: -20px;
+  color: white;
+}

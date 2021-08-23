@@ -111,3 +111,10 @@
   font-weight: bold;
   font-size: 30px;
 }
+
+.imageElement--carousel {
+  border-radius: 20px;
+} 
+.productBrand--quickview {
+  color: white;
+}
